@@ -1,0 +1,4 @@
+package Control.Unicode
+
+modules = Control.Unicode
+opts = "--total" 
