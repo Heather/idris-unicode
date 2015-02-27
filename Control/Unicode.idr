@@ -11,6 +11,6 @@ syntax [a] "×" [b] = a * b
 syntax [a] "≡" [b] = a == b
 syntax [a] "≠" [b] = a /= b
 syntax [a] "≤" [b] = a <= b
-syntax [a] "≥" [b] = a <= b
+syntax [a] "≥" [b] = a >= b
 
 syntax "¬" [a] = not a
