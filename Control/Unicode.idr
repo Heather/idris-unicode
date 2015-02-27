@@ -14,3 +14,6 @@ syntax [a] "≤" [b] = a <= b
 syntax [a] "≥" [b] = a >= b
 
 syntax "¬" [a] = not a
+
+syntax "∀" [xs] = any xs
+syntax "∀λ" {a} "→" [body] = any (\a => body)
