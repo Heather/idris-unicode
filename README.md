@@ -3,7 +3,45 @@
 
 [There are several reasons why idris will not support unicode operators](https://github.com/idris-lang/Idris-dev/wiki/Unofficial-FAQ#will-there-be-support-for-unicode-characters-for-operators)
 
-This project is to discover possible ways of using them in Idris
+This project is to discover possible ways of using them in Idris <br/>
+Contributions are very welcome!
+
+``` idris
+syntax [a] "→" [b] = a -> b
+syntax [a] "∘" [b] = a . b
+
+syntax "λ" {a} "→" [body] = \a => body
+syntax "λ" {a}"," {b} "→" [body] = \a, b  => body
+syntax "λ" {a}"," {b}"," {c} "→" [body] = \a, b, c  => body
+syntax "λ" {a}"," {b}"," {c}"," {d} "→" [body] = \a, b, c, d  => body
+
+syntax [a] "⧺" [b] = a ++ b
+syntax [a] "∈" [b] = elem a b
+syntax [a] "∉" [b] = notElem a b
+syntax [a] "‼" [b] = index' a b
+
+syntax [a] "×" [b] = a * b -- deprecated
+syntax [a] "⋅" [b] = a * b
+syntax [a] "÷" [b] = a / b
+syntax [a] "≡" [b] = a == b
+syntax [a] "≠" [b] = a /= b
+syntax [a] "≢" [b] = a /= b
+syntax [a] "≤" [b] = a <= b
+syntax [a] "≮" [b] = a > b
+syntax [a] "≥" [b] = a >= b
+syntax [a] "≯" [b] = a < b
+
+syntax "¬" [a] = not a
+syntax [a] "∧" [b] = a && b
+syntax [a] "∨" [b] = a || b
+
+syntax "∀" [xs] = forall xs
+syntax "∀λ" {a} "→" [body] = any (\a => body)
+
+syntax "π" = pi
+
+syntax "ℤ" = Int
+```
 
 ``` idris
 import Control.Unicode
@@ -19,38 +57,4 @@ main = do
     when (¬ (4 ≤ 2)) $ hello "World"
     when ((2 × 2) ≡ 4) $ hellonum "Number " 1
     when (1 ≠ 2) $ hello "hello"
-```
-
-``` idris
-import public Control.Unicode
-
-sck : (List Char) → (List (List Char)) → Bool
-sck rl = ∀λ lc → isSuffixOf lc rl
-
-pck : (List Char) → (List (List Char)) → Bool
-pck rl = ∀λ lc → isPrefixOf lc rl
-
-complete : String → String → String
-complete a b =
-    if len == 0 || sfgo || prgo
-        then (a ++ "\n" ++ b)
-        else if la ≡ lb
-                then (a ++ scl ++ "\n" ++ b)
-                else if la > lb then let rpl = pack $ with List replicate lb ' '
-                                     in (a ++ scl ++ "\n" ++ rpl ++ "}\n" ++ b)
-                                else (a ++ " {\n" ++ b)
-  where
-    prgo : Bool
-    prgo = pck rl [ ['#']
-                  ]
-    sfgo : Bool    
-    sfgo = sck rl [ ['\\'], [','], ['&']
-                  , [':'], ['='], ['{']
-                  , ['('], (unpack "/*}*/")
-                  , [';']
-                  ]
-    scl : String
-    scl = if sck rl [ (unpack "/*;*/") ]
-                    then ""
-                    else ";"
 ```
