@@ -11,7 +11,7 @@ syntax "λ" {a}"," {b}"," {c}"," {d} "→" [body] = \a, b, c, d  => body
 syntax [a] "⧺" [b] = a ++ b
 syntax [a] "∈" [b] = elem a b
 syntax [a] "∉" [b] = notElem a b
-syntax [a] "‼" [b] = index' a b
+syntax [a] "‼" [b] = index' b a
 
 syntax [a] "×" [b] = a * b -- deprecated
 syntax [a] "⋅" [b] = a * b
