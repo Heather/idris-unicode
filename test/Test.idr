@@ -3,10 +3,10 @@ module Main
 import Control.Unicode
 
 hello : String → IO ()
-hello = λ s → putStrLn $ "Hi " ++ s
+hello = λ s → putStrLn $ "Hi " ⧺ s
 
 hellonum : String → Int → IO ()
-hellonum = λ t, n → hello $ t ++ (show n)
+hellonum = λ t, n → hello $ t ⧺ (show n)
 
 sck : String → (List (List Char)) → Bool
 sck rl = ∀λ lc → isSuffixOf lc $ unpack rl

@@ -28,7 +28,7 @@ syntax "¬" [a] = not a
 syntax [a] "∧" [b] = a && b
 syntax [a] "∨" [b] = a || b
 
-syntax "∀" [xs] = forall xs
+syntax "∀" [xs] = any xs --TODO: forall
 syntax "∀λ" {a} "→" [body] = any (\a => body)
 
 syntax "π" = pi
