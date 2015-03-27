@@ -2,15 +2,20 @@ module Main
 
 import Control.Unicode
 
-program : String
-program = "+ + * - /"
+prog : String
+prog= "+ + * - /"
+
+cType : String → Type
+cType c = if ('/' ∈ (unpack c))
+            then Float
+            else Int
 
 main : IO ()
-main = putStrLn $ "The program " 
-                    ⧺ program 
-                    ⧺ " calculates the value " 
-                    ⧺ (show $ acc (unpack program) 0)
- where acc : (List Char) → Float → Float
+main = putStrLn $ "The program "
+                    ⧺ prog
+                    ⧺ " calculates the value "
+                    ⧺ (show $ acc (unpack prog) 0)
+ where acc : (List Char) → (cType prog) → (cType prog)
        acc [] m = m
        acc (x::xs) m = acc xs $ case x of
                                  '+' => m + 1
