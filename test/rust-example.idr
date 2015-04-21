@@ -8,7 +8,7 @@ prog = "+ + * - /"
 aType : Type
 aType = if '/' ∈ (unpack prog)
             then Float
-            else Int
+            else ℤ
 
 main : IO ()
 main = putStrLn $ "The program "
