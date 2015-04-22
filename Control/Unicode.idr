@@ -35,9 +35,16 @@ syntax [a] "≮" [b] = a > b
 syntax [a] "≥" [b] = a >= b
 syntax [a] "≯" [b] = a < b
 
+syntax "√" [a] = sqrt a
+--syntax "∛" [a] = sqrt a ???
+syntax "∜" [a] = sqrt $ sqrt a
+
 syntax "¬" [a] = not a
 syntax [a] "∧" [b] = a && b
 syntax [a] "∨" [b] = a || b
+
+-- request Data.List
+syntax [a] "∩" [b] = intersect a b
 
 -- Universal quantification ∀
 {- syntax "∀" [a] [b] = (a : b) -- ??? -}
@@ -50,6 +57,10 @@ syntax [xs] "∁" [ys] = xs \\ ys
 
 -- Multiplication
 syntax "∏" [xs] = foldl (*) 1 xs
+
+-- comonad-transformers
+-- Data.Functor.Coproduct
+-- syntax "∐" ...
 
 -- Summation
 syntax "∑" [xs] = foldl (+) 0 xs

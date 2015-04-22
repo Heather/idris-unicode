@@ -2,6 +2,9 @@ module Main
 
 import Control.Unicode
 
+-- for intersect
+import Data.List
+
 hello : String → IO ()
 hello = λ s → putStrLn $ "Hi " ⧺ s
 
@@ -45,8 +48,11 @@ g (S r) n = g r n
 fmt : qib n `represents` n -> String
 fmt (axiom n) = "axiom " ⧺ show n
 
-lst : List Int
-lst = [1, 2, 3]
+lst1 : List Int
+lst1 = [1, 2, 3]
+
+lst2 : List Int
+lst2 = [2]
 
 fsm : Int -> Int -> Int
 fsm a b = a + b
@@ -60,5 +66,6 @@ main = do
     n <- map (const (the Nat 10000)) (putStrLn "*oink*")
     putStrLn . show $ getWitness (f 4 n)
     putStrLn . fmt  $ getProof   (g 4 n)
-    putStrLn $ "mpl: " ++ (show (∏ lst))
-    putStrLn $ "sum: " ++ (show (∑ lst))
+    putStrLn $ "mpl: " ++ (show (∏ lst1))
+    putStrLn $ "sum: " ++ (show (∑ lst1))
+    putStrLn $ "intersect: " ++ (show (lst1 ∩ lst2))
