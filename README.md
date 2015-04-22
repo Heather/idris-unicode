@@ -14,7 +14,6 @@ module Control.Unicode
 
 -- non unicode custom syntax
 syntax [test] "?" [t] ":" [e] = if test then t else e
-syntax "for" {x} "in" [xs] [body] = forLoop xs (\x => body)
 
 -- Basic
 syntax [a] "→" [b] = a -> b
@@ -47,9 +46,19 @@ syntax [a] "≮" [b] = a > b
 syntax [a] "≥" [b] = a >= b
 syntax [a] "≯" [b] = a < b
 
+syntax "√" [a] = sqrt a
+--syntax "∛" [a] = sqrt a ???
+syntax "∜" [a] = sqrt $ sqrt a
+
 syntax "¬" [a] = not a
 syntax [a] "∧" [b] = a && b
 syntax [a] "∨" [b] = a || b
+
+-- Intersection, request Data.List
+syntax [a] "∩" [b] = intersect a b
+
+-- Union
+syntax [a] "∪" [b] = union a b
 
 -- Universal quantification ∀
 {- syntax "∀" [a] [b] = (a : b) -- ??? -}
@@ -62,6 +71,10 @@ syntax [xs] "∁" [ys] = xs \\ ys
 
 -- Multiplication
 syntax "∏" [xs] = foldl (*) 1 xs
+
+-- comonad-transformers
+-- Data.Functor.Coproduct
+-- syntax "∐" ...
 
 -- Summation
 syntax "∑" [xs] = foldl (+) 0 xs

@@ -54,18 +54,17 @@ lst1 = [1, 2, 3]
 lst2 : List Int
 lst2 = [2]
 
-fsm : Int -> Int -> Int
-fsm a b = a + b
-
 main : IO ()
-main = do 
+main = do
     when (sck "The end;" [[';']]) $ hellonum "Number " 1
     when (¬ (4 ≤ 2)) $ hello "World"
     when ((2 × 2) ≡ 4) $ hellonum "Number " 2
     when (1 ≠ 2) $ hello "There"
+
     n <- map (const (the Nat 10000)) (putStrLn "*oink*")
     putStrLn . show $ getWitness (f 4 n)
     putStrLn . fmt  $ getProof   (g 4 n)
+
     putStrLn $ "mpl: " ++ (show (∏ lst1))
     putStrLn $ "sum: " ++ (show (∑ lst1))
     putStrLn $ "intersect: " ++ (show (lst1 ∩ lst2))

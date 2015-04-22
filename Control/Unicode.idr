@@ -2,7 +2,6 @@ module Control.Unicode
 
 -- non unicode custom syntax
 syntax [test] "?" [t] ":" [e] = if test then t else e
-syntax "for" {x} "in" [xs] [body] = forLoop xs (\x => body)
 
 -- Basic
 syntax [a] "→" [b] = a -> b
@@ -43,10 +42,10 @@ syntax "¬" [a] = not a
 syntax [a] "∧" [b] = a && b
 syntax [a] "∨" [b] = a || b
 
--- request Data.List
+-- Intersection, request Data.List
 syntax [a] "∩" [b] = intersect a b
 
--- union
+-- Union
 syntax [a] "∪" [b] = union a b
 
 -- Universal quantification ∀
