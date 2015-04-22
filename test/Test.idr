@@ -69,3 +69,4 @@ main = do
     putStrLn $ "mpl: " ++ (show (∏ lst1))
     putStrLn $ "sum: " ++ (show (∑ lst1))
     putStrLn $ "intersect: " ++ (show (lst1 ∩ lst2))
+    putStrLn $ "union: " ++ (show (lst1 ∪ lst2))

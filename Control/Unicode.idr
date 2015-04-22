@@ -46,6 +46,9 @@ syntax [a] "∨" [b] = a || b
 -- request Data.List
 syntax [a] "∩" [b] = intersect a b
 
+-- union
+syntax [a] "∪" [b] = union a b
+
 -- Universal quantification ∀
 {- syntax "∀" [a] [b] = (a : b) -- ??? -}
 
