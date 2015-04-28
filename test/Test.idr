@@ -5,6 +5,9 @@ import Control.Unicode
 -- for intersect
 import Data.List
 
+-- for unfold
+import Data.CoList
+
 hello : String → IO ()
 hello = λ s → putStrLn $ "Hi " ⧺ s
 
@@ -69,3 +72,6 @@ main = do
     putStrLn $ "sum: " ++ (show (∑ lst1))
     putStrLn $ "intersect: " ++ (show (lst1 ∩ lst2))
     putStrLn $ "union: " ++ (show (lst1 ∪ lst2))
+
+    putStrLn $ "unfoldr: " ++ (show $ takeCo 10
+        ( unfoldr (λ b → if b ≡ 0 then Nothing else Just (b, b-1)) 10) )
