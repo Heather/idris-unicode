@@ -8,6 +8,8 @@ import Data.List
 -- for unfold
 import Data.CoList
 
+%default total
+
 hello : String → IO ()
 hello = λ s → putStrLn $ "Hi " ⧺ s
 
@@ -76,5 +78,11 @@ main = do
     putStrLn $ "unfoldr: " ⧺ (show
         ( unfoldr
             (λ b → if b ≡ 0 then Nothing else Just (b, b-1)) 10
+        )
+    )
+
+    putStrLn $ "unfoldr: " ⧺ (show
+        ( unfoldr
+            (λ b → if b ≡ 0 then Nothing else Just (b, b-1)) 30
         )
     )
