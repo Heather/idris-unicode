@@ -68,10 +68,13 @@ main = do
     putStrLn . show $ getWitness (f 4 n)
     putStrLn . fmt  $ getProof   (g 4 n)
 
-    putStrLn $ "mpl: " ++ (show (∏ lst1))
-    putStrLn $ "sum: " ++ (show (∑ lst1))
-    putStrLn $ "intersect: " ++ (show (lst1 ∩ lst2))
-    putStrLn $ "union: " ++ (show (lst1 ∪ lst2))
+    putStrLn $ "mpl: " ⧺ (show (∏ lst1))
+    putStrLn $ "sum: " ⧺ (show (∑ lst1))
+    putStrLn $ "intersect: " ⧺ (show (lst1 ∩ lst2))
+    putStrLn $ "union: " ⧺ (show (lst1 ∪ lst2))
 
-    putStrLn $ "unfoldr: " ++ (show $ takeCo 10
-        ( unfoldr (λ b → if b ≡ 0 then Nothing else Just (b, b-1)) 10) )
+    putStrLn $ "unfoldr: " ⧺ (show
+        ( unfoldr
+            (λ b → if b ≡ 0 then Nothing else Just (b, b-1)) 10
+        )
+    )
