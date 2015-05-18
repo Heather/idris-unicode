@@ -17,7 +17,7 @@ hellonum : String → Int → IO ()
 hellonum = λ t, n → hello $ t ⧺ (show n)
 
 sck : String → (List (List Char)) → Bool
-sck rl = any (\lc => isSuffixOf lc (unpack rl))
+sck rl = any (λ lc → isSuffixOf lc (unpack rl))
 
 -- An expensive function.
 qib : Nat → Nat
