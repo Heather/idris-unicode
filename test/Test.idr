@@ -67,7 +67,7 @@ main = do
     ((2 × 2) ≡ 4) ⁂ hellonum "Number " 2
     (1 ≠ 2) ⁂ hello "There"
 
-    n <- (const (the Nat 10000)) ∰ (❤ "*oink*")
+    n <- (const (the Nat 10000)) ∰ (➢ "*oink*")
     putStrLn . show $ getWitness (f 4 n)
     putStrLn . fmt  $ getProof   (g 4 n)
 
