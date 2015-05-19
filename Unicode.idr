@@ -17,10 +17,11 @@ syntax "፨" [a] = unpack a
 syntax "◉" [a] = pack a
 
 syntax [a] "∰" [b] = map a b
+syntax "✇" [a] = run a
 syntax "❂" [a] = return a
 
 {-
 random symbols to add..
 
-♒❉✇※⁇✺❃✼✂ℚℒ∶≅≛≜≣⋙⋘≪≫➾➢∫∞µ
+♒❉※⁇✺❃✼✂ℚℒ∶≅≛≜≣⋙⋘≪≫➾➢∫∞µ
 -}
