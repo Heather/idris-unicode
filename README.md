@@ -8,82 +8,32 @@ idris-unicode
 This project is to discover possible ways of using them in Idris <br/>
 Contributions are very welcome!
 
-There is a lot of things to do... And a lot of impossible things.
-=================================================================
+ - basic (sane) module to include is `Control.Unicode`
+ - include `Unicode` with random unicode extras (dangerous and not recommended for now)
+
+Simple example
+--------------
 
 ``` idris
-module Control.Unicode
+prog : String
+prog = "+ + * - /"
 
--- non unicode custom syntax
-syntax [test] "?" [t] ":" [e] = if test then t else e
+aType : Type
+aType = if '/' ∈ (፨ prog)
+            then ℝ
+            else ℤ
 
--- Basic
-syntax [a] "→" [b] = a -> b
-syntax [a] "∘" [b] = a . b
-
-syntax "λ" {a} "→" [body] = \a => body
-syntax "λ" {a}"," {b} "→" [body] = \a, b  => body
-syntax "λ" {a}"," {b}"," {c} "→" [body] = \a, b, c  => body
-syntax "λ" {a}"," {b}"," {c}"," {d} "→" [body] = \a, b, c, d  => body
-syntax "λ" {a}"," {b}"," {c}"," {d}"," {e} "→" [body] = \a, b, c, d, e  => body
-syntax "λ" {a}"," {b}"," {c}"," {d}"," {e}"," {f} "→" [body] = \a, b, c, d, e, f  => body
-syntax "λ" {a}"," {b}"," {c}"," {d}"," {e}"," {f}"," {g} "→" [body] = \a, b, c, d, e, f, g  => body
-
-syntax [a] "⧺" [b] = a ++ b
-syntax [a] "∈" [b] = elem a b
-syntax [a] "∋" [b] = elem b a
-syntax [a] "∉" [b] = notElem a b
-syntax [a] "∌" [b] = notElem b a
-syntax [a] "‼" [b] = index' b a
-
--- Math operations
-syntax [a] "×" [b] = a * b
-syntax [a] "⋅" [b] = a * b
-syntax [a] "÷" [b] = a / b
-syntax [a] "≡" [b] = a == b
-syntax [a] "≠" [b] = a /= b
-syntax [a] "≢" [b] = a /= b
-syntax [a] "≤" [b] = a <= b
-syntax [a] "≮" [b] = a > b
-syntax [a] "≥" [b] = a >= b
-syntax [a] "≯" [b] = a < b
-
-syntax "√" [a] = sqrt a
---syntax "∛" [a] = sqrt a ???
-syntax "∜" [a] = sqrt $ sqrt a
-
-syntax "¬" [a] = not a
-syntax [a] "∧" [b] = a && b
-syntax [a] "∨" [b] = a || b
-
--- Intersection, request Data.List
-syntax [a] "∩" [b] = intersect a b
-
--- Union
-syntax [a] "∪" [b] = union a b
-
--- Universal quantification ∀
-{- syntax "∀" [a] [b] = (a : b) -- ??? -}
-
--- Existential quantification ∃
-syntax "∃" [a] = Exists a
-
--- Complement (set theory)
-syntax [xs] "∁" [ys] = xs \\ ys
-
--- Multiplication
-syntax "∏" [xs] = foldl (*) 1 xs
-
--- comonad-transformers
--- Data.Functor.Coproduct
--- syntax "∐" ...
-
--- Summation
-syntax "∑" [xs] = foldl (+) 0 xs
-
--- Constants
-syntax "π" = pi
-syntax "ℤ" = Int
-syntax "∅" = Void
-
+main : ໒ ()
+main = putStrLn $ "The program "
+                  ⧺ prog
+                  ⧺ " calculates the value "
+                  ⧺ (show $ acc (፨ prog) 0)
+ where acc : (List Char) → (aType) → (aType)
+       acc [] m = m
+       acc (x::xs) m = acc xs $ case x of
+                                 '+' => m + 1
+                                 '-' => m - 1
+                                 '*' => m ⋅ 2
+                                 '/' => m ÷ 2
+                                 _   => m
 ```
