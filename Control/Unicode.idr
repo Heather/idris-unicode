@@ -67,7 +67,9 @@ syntax "∏" [xs] = foldl (*) 1 xs
 -- Summation
 syntax "∑" [xs] = foldl (+) 0 xs
 
--- Constants
+-- Constants and types
 syntax "π" = pi
 syntax "ℤ" = Int
+syntax "ℕ" = Nat
+syntax "ℝ" = Float
 syntax "∅" = Void

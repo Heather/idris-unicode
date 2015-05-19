@@ -1,20 +1,20 @@
 module Main
 
-import Control.Unicode
+import Unicode
 
 prog : String
 prog = "+ + * - /"
 
 aType : Type
-aType = if '/' ∈ (unpack prog)
-            then Float
+aType = if '/' ∈ (፨ prog)
+            then ℝ
             else ℤ
 
-main : IO ()
+main : ໒ ()
 main = putStrLn $ "The program "
-                    ⧺ prog
-                    ⧺ " calculates the value "
-                    ⧺ (show $ acc (unpack prog) 0)
+                  ⧺ prog
+                  ⧺ " calculates the value "
+                  ⧺ (show $ acc (፨ prog) 0)
  where acc : (List Char) → (aType) → (aType)
        acc [] m = m
        acc (x::xs) m = acc xs $ case x of

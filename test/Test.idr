@@ -1,6 +1,6 @@
 module Main
 
-import Control.Unicode
+import Unicode
 
 -- for intersect
 import Data.List
@@ -10,14 +10,14 @@ import Data.CoList
 
 %default total
 
-hello : String → IO ()
+hello : String → ໒ ()
 hello = λ s → putStrLn $ "Hi " ⧺ s
 
-hellonum : String → Int → IO ()
-hellonum = λ t, n → hello $ t ⧺ (show n)
+hellonum : String → Int → ໒ ()
+hellonum = λ t, n → hello $ t ⧺ (✪ n)
 
 sck : String → (List (List Char)) → Bool
-sck rl = any (λ lc → isSuffixOf lc (unpack rl))
+sck rl = any (λ lc → isSuffixOf lc (፨ rl))
 
 -- An expensive function.
 qib : Nat → Nat
@@ -26,6 +26,7 @@ qib    (S Z)  = 2
 qib (S (S n)) = qib n * qib (S n)
 
 -- An equality whose size reflects the size of numbers.
+-- syntax [a] "≌" [b] = equals a b
 data equals : Nat -> Nat -> Type where
     eqZ : Z `equals` Z
     eqS : m `equals` n -> S m `equals` S n
@@ -51,7 +52,7 @@ g  Z    n = Evidence (qib n) (axiom n)
 g (S r) n = g r n
 
 fmt : qib n `represents` n -> String
-fmt (axiom n) = "axiom " ⧺ show n
+fmt (axiom n) = "axiom " ⧺ ✪ n
 
 lst1 : List Int
 lst1 = [1, 2, 3]
@@ -59,21 +60,21 @@ lst1 = [1, 2, 3]
 lst2 : List Int
 lst2 = [2]
 
-main : IO ()
+main : ໒ ()
 main = do
-    when (sck "The end;" [[';']]) $ hellonum "Number " 1
-    when (¬ (4 ≤ 2)) $ hello "World"
-    when ((2 × 2) ≡ 4) $ hellonum "Number " 2
-    when (1 ≠ 2) $ hello "There"
+    (sck "The end;" [[';']]) ⁂ hellonum "Number " 1
+    (¬ (4 ≤ 2)) ⁂ hello "World"
+    ((2 × 2) ≡ 4) ⁂ hellonum "Number " 2
+    (1 ≠ 2) ⁂ hello "There"
 
-    n <- map (const (the Nat 10000)) (putStrLn "*oink*")
+    n <- (const (the Nat 10000)) ∰ (❤ "*oink*")
     putStrLn . show $ getWitness (f 4 n)
     putStrLn . fmt  $ getProof   (g 4 n)
 
-    putStrLn $ "mpl: " ⧺ (show (∏ lst1))
-    putStrLn $ "sum: " ⧺ (show (∑ lst1))
-    putStrLn $ "intersect: " ⧺ (show (lst1 ∩ lst2))
-    putStrLn $ "union: " ⧺ (show (lst1 ∪ lst2))
+    putStrLn $ "mpl: " ⧺ (✪ (∏ lst1))
+    putStrLn $ "sum: " ⧺ (✪ (∑ lst1))
+    putStrLn $ "intersect: " ⧺ (✪ (lst1 ∩ lst2))
+    putStrLn $ "union: " ⧺ (✪ (lst1 ∪ lst2))
 
     putStrLn $ "unfoldr: " ⧺ (show
         ( unfoldr
@@ -81,7 +82,7 @@ main = do
         )
     )
 
-    putStrLn $ "unfoldr: " ⧺ (show
+    putStrLn $ "unfoldr: " ⧺ (✪
         ( unfoldr
             (λ b → if b ≡ 0 then Nothing else Just (b, b-1)) 30
         )
