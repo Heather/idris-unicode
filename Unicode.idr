@@ -4,6 +4,7 @@ module Unicode
 
 import public Control.Unicode
 
+syntax "♬" [a] = Eff a
 syntax "໒" [a] = IO a
 
 syntax [a] "⁂" [b] = when a b
@@ -16,9 +17,10 @@ syntax "፨" [a] = unpack a
 syntax "◉" [a] = pack a
 
 syntax [a] "∰" [b] = map a b
+syntax "❂" [a] = return a
 
 {-
 random symbols to add..
 
-♒❉✇※⁇✺❃❂✼✂ℚℒ∶≅≛≜≣⋙⋘≪≫➾➢
+♒❉✇※⁇✺❃✼✂ℚℒ∶≅≛≜≣⋙⋘≪≫➾➢∫∞µ
 -}
