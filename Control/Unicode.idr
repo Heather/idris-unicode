@@ -20,7 +20,7 @@ syntax [a] "∈" [b] = elem a b
 syntax [a] "∋" [b] = elem b a
 syntax [a] "∉" [b] = notElem a b
 syntax [a] "∌" [b] = notElem b a
-syntax [a] "‼" [b] = index' b a
+syntax [a] "‼" [b] = index' b a --'
 
 -- Math operations
 syntax [a] "×" [b] = a * b
