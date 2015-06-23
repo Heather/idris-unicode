@@ -71,7 +71,7 @@ syntax "∑" [xs] = foldl (+) 0 xs
 syntax "π" = pi
 syntax "ℤ" = Int
 syntax "ℕ" = Nat
-syntax "ℝ" = Float
+syntax "ℝ" = Double
 syntax "∅" = Void
 
 -- coproduct type
