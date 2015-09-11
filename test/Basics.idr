@@ -2,7 +2,7 @@ module Main
 
 import Unicode
 
-natToInt : Nat → ℤ
+natToInt : (ℕ) → ℤ
 natToInt O = 0
 natToInt (S k) = 1 + (natToInt k)
 
