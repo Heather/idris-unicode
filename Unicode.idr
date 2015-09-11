@@ -20,8 +20,13 @@ syntax [a] "∰" [b] = map a b
 syntax "✇" [a] = run a
 syntax "❂" [a] = return a
 
+syntax "☆" = Type
+syntax "★" = String
+
 {-
 random symbols to add..
 
-♒❉※⁇✺❃✼✂ℚℒ∶≅≛≜≣⋙⋘≪≫➾∫∞µ
+♡♯⤧⤄∾
+♒❉※⁇✺❃✼✂ℚℒ∶≅≛≜♀♂≣➾∫∞µ⌘⟴⥺
+⋙⋘≪≫
 -}
