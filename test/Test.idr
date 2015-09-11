@@ -76,14 +76,19 @@ main = do
     putStrLn $ "intersect: " ⧺ (✪ (lst1 ∩ lst2))
     putStrLn $ "union: " ⧺ (✪ (lst1 ∪ lst2))
 
-    putStrLn $ "unfoldr: " ⧺ (show
+    let int10 : Int = 10
+    putStrLn $ "unfoldr: " ⧺ (with CoList show
         ( unfoldr
-            (λ b → if b ≡ 0 then Nothing else Just (b, b-1)) 10
+            (λ b → if b ≡ 0 then Nothing
+                            else Just (b, b - 1)
+            ) int10
         )
     )
 
     putStrLn $ "unfoldr: " ⧺ (✪
         ( unfoldr
-            (λ b → if b ≡ 0 then Nothing else Just (b, b-1)) 30
+            (λ b → if b ≡ 0 then Nothing
+                                 else Just (b, b + 1)
+            ) 10
         )
     )
