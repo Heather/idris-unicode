@@ -1,6 +1,7 @@
 idris-unicode
 -------------
 
+[![Build Status](https://travis-ci.org/Heather/idris-unicode.png?branch=master)](https://travis-ci.org/Heather/idris-unicode)
 [![tip for next commit](http://prime4commit.com/projects/282.svg)](http://prime4commit.com/projects/282)
 
 [There are several reasons why idris will not support unicode operators](https://github.com/idris-lang/Idris-dev/wiki/Unofficial-FAQ#will-there-be-support-for-unicode-characters-for-operators)
