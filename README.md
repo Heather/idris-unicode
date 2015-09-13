@@ -19,17 +19,17 @@ Simple example
 prog : String
 prog = "+ + * - /"
 
-aType : Type
-aType = if '/' ∈ (፨ prog)
+ℚ : Type
+ℚ = if '/' ∈ (፨ prog)
             then ℝ
             else ℤ
 
 main : ໒ ()
 main = putStrLn $ "The program "
-                  ⧺ prog
-                  ⧺ " calculates the value "
-                  ⧺ (show $ acc (፨ prog) 0)
- where acc : (List Char) → (aType) → (aType)
+                  ++ prog
+                  ++ " calculates the value "
+                  ++ (show $ acc (፨ prog) 0)
+ where acc : (List Char) → (ℚ) → (ℚ)
        acc [] m = m
        acc (x::xs) m = acc xs $ case x of
                                  '+' => m + 1
