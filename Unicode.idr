@@ -13,7 +13,7 @@ syntax "♯" [a] = putStr a
 syntax "➢" [a] = putStrLn a
 syntax "✪" [a] = show a
 
-syntax "፨" [a] = unpack a
+syntax "❃" [a] = unpack a
 syntax "◉" [a] = pack a
 
 syntax [a] "∰" [b] = map a b
@@ -28,6 +28,6 @@ syntax "ൠ" = Bool
 random symbols to add..
 
 ⟴⤧⤄∾
-♒❉※⁇✺❃✼✂ℚℒ∶≅≛≜♀♂≣➾∫∞µ⌘⥺
+♒❉※⁇✺✼✂ℚℒ∶≅≛≜♀♂≣➾∫∞µ⌘⥺
 ⋙⋘≪≫
 -}

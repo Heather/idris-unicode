@@ -17,7 +17,7 @@ hellonum : String → Int → ໒ ()
 hellonum = λ t, n → hello $ t ⧺ (✪ n)
 
 sck : String → (List (List Char)) → Bool
-sck rl = any (λ lc → isSuffixOf lc (፨ rl))
+sck rl = any (λ lc → isSuffixOf lc (❃ rl))
 
 -- An expensive function.
 qib : Nat → Nat
