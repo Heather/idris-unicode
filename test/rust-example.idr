@@ -17,9 +17,9 @@ main = putStrLn $ "The program "
                   ⧺ (show $ acc (❃ prog) 0)
  where acc : (List Char) → (aType) → (aType)
        acc [] m = m
-       acc (x::xs) m = acc xs $ case x of
-                                 '+' => m + 1
-                                 '-' => m - 1
-                                 '*' => m ⋅ 2
-                                 '/' => m ÷ 2
-                                 _   => m
+       acc (x::xs) m = acc xs (
+         case x of '+' => m + 1
+                   '-' => m - 1
+                   '*' => m ⋅ 2
+                   '/' => m ÷ 2
+                   _   => m)
