@@ -73,3 +73,6 @@ syntax "ℤ" = Int
 syntax "ℕ" = Nat
 syntax "ℝ" = Float
 syntax "∅" = Void
+
+-- coproduct type
+syntax [a] "⊔" [b] = Either a b

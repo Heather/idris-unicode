@@ -10,6 +10,8 @@ import Data.CoList
 
 %default total
 
+--data CPT = ℝ ⊔ ℤ
+
 hello : String → ໒ ()
 hello = λ s → putStrLn $ "Hi " ⧺ s
 
