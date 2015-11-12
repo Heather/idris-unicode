@@ -5,8 +5,8 @@ import Unicode
 prog : String
 prog = "+ + * - /"
 
-aType : Type
-aType = if '/' ∈ (❃ prog)
+AType : Type
+AType = if '/' ∈ (❃ prog)
             then ℝ
             else ℤ
 
@@ -15,7 +15,7 @@ main = putStrLn $ "The program "
                   ⧺ prog
                   ⧺ " calculates the value "
                   ⧺ (show $ acc (❃ prog) 0)
- where acc : (List Char) → (aType) → (aType)
+ where acc : (List Char) → (AType) → (AType)
        acc [] m = m
        acc (x::xs) m = acc xs (
          case x of '+' => m + 1
