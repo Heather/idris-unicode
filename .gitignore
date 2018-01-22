@@ -1,3 +1,6 @@
 *.o
 *.ibc
 *.exe
+test/base
+test/rust
+test/test

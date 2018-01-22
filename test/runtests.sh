@@ -12,9 +12,9 @@ clean_up() {
 clean_up
 
 echo "compiling tests..."
-idris Basics.idr -p Control.Unicode -p contrib -o base || die "* could not compile basics test *"
-idris Test.idr -p Control.Unicode -p contrib -o test || die "* could not compile default test *"
-idris rust-example.idr -p Control.Unicode -o rust || die "* could not compile rust example *"
+idris Basics.idr -p unicode -p contrib -o base || die "* could not compile basics test *"
+idris Test.idr -p unicode -p contrib -o test || die "* could not compile default test *"
+idris rust-example.idr -p unicode -o rust || die "* could not compile rust example *"
 
 echo "compiled OK, running tests..."
 ./base || die "* base test failed or timed out *"
